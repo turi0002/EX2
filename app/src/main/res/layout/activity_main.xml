@@ -36,11 +36,12 @@
         android:layout_toEndOf="@+id/tvName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Button_press"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/press" />
+        android:text="@string/press"
+        android:onClick="ButtonClicked"/>
 </RelativeLayout>
 
