@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -13,9 +14,17 @@ public class MainActivity extends Activity {
 
     public void ButtonClicked(View v)
     {
-        this.cnt++;
-         Toast.makeText(this, "this button was clicked: " +cnt+ " times", Toast.LENGTH_SHORT).show();
-        findViewById(R.id.Etenter);
+
+        EditText edName =(EditText)findViewById(R.id.etEnter);
+        if(edName.getText().length()==0){
+            Toast.makeText(this, "Text must be inputed", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            cnt++;
+            Toast.makeText(this, edName.getText()+ " this button was clicked: " +cnt+ " times", Toast.LENGTH_SHORT).show();
+        }
+
+
     };
 
 
@@ -53,5 +62,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i(MY_TAG, "On Create Event");
+        Toast.makeText(this, "Wellcome", Toast.LENGTH_SHORT).show();
     }
 }
