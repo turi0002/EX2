@@ -6,5 +6,18 @@
     and on click handelr</string>
     <string name="name">name</string>
     <string name="enter">Enter your first name</string>
-    <string name="press">Try me</string>
+    <string name="presson_Rea">Try me</string>
+    <string name="A_onResume">On Resume Event</string>
+    <string name="A_onStart">On Start Event</string>
+    <string name="A_onStop">On stop Event</string>
+    <string name="A_onDestroy">On destroy Event</string>
+    <string name="A_onCreate">On Create Event</string>
+    <string name="A_onPause">On Pause Event</string>
+    <string name="A_hello">Wellcome</string>
+    <string name="press">press me</string>
+    <string name="Act">EX2.MainActivity</string>
+    <string name="error">Text must be inputed</string>
+    <string name="click"> this button was clicked: </string>
+    <string name="restart">onSaveInstanceState</string>
+
 </resources>

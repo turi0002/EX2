@@ -17,51 +17,65 @@ public class MainActivity extends Activity {
 
         EditText edName =(EditText)findViewById(R.id.etEnter);
         if(edName.getText().length()==0){
-            Toast.makeText(this, "Text must be inputed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show();
         }
         else{
             cnt++;
-            Toast.makeText(this, edName.getText()+ " this button was clicked: " +cnt+ " times", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, edName.getText()+ " "+getString(R.string.click) +cnt, Toast.LENGTH_SHORT).show();
         }
 
 
     };
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(MY_TAG,getString(R.string.restart));
+        outState.putInt("conuter",this.cnt);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            this.cnt = savedInstanceState.getInt("conter");
+        }
+    }
 
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i(MY_TAG, "On Start Event");
+        Log.i(MY_TAG, getString(R.string.A_onResume));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(MY_TAG, "On Resume Event");
+        Log.i(MY_TAG, getString(R.string.A_onCreate));
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(MY_TAG, "On Pause Event");
+        Log.i(MY_TAG, getString(R.string.A_onPause));
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i(MY_TAG, "On Stop Event");
+        Log.i(MY_TAG,getString(R.string.A_onStop));
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(MY_TAG, "On Destroy Event");
+        Log.i(MY_TAG, getString(R.string.A_onDestroy));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.i(MY_TAG, "On Create Event");
-        Toast.makeText(this, "Wellcome", Toast.LENGTH_SHORT).show();
+        Log.i(MY_TAG, getString(R.string.A_onCreate));
+
     }
 }
